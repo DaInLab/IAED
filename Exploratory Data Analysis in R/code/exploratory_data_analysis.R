@@ -268,11 +268,16 @@ svm_fit = svm(formula = DEATH_EVENT ~ .,
 y_pred = predict(svm_fit, newdata = test_data[-13])
 
 # A previsão foi realizada. Agora é preciso verificar a precisão da previsão. 
-# A função ConfusionMatrix do pacote 'caret’ será utilizada,  pois a função 
-# fornece várias informações com apenas uma linha de código: 
+# A função ConfusionMatrix do pacote 'caret’ será utilizada, pois fornece várias informações
+# com apenas uma linha de código:
+#  
 if (!"caret" %in% installed.packages()) install.packages("caret")
 library(caret)
 confusionMatrix(y_pred, as.factor(test_data$DEATH_EVENT))
+
+# Matriz de confusão é uma tabela que permite a visualização do desempenho de um algoritmo de classificação. 
+# Essa tabela de contingência 2x2 especial é também chamada de matriz de erro.  
+
 #Confusion Matrix and Statistics
 #
 #          Reference

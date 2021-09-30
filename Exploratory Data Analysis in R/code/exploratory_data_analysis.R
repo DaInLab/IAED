@@ -1,6 +1,33 @@
-# 1. Resumo e visualização
-df = read.csv("./data/heart_failure_clinical_records_dataset.csv")
+# Adaptação feita em 30/09/2021 em ambiente OSx
+# Para não haver necessidade de alterar o direcionamento aos diretórios de dados
+# no programa quando "rodando" em plataformas  "windows" ou "unix-like"!
+# Fonte: https://www.r-bloggers.com/2015/06/identifying-the-os-from-r/
+# Author: Will
+# Date: June 10, 2015
+get_os <- function(){
+  sysinf <- Sys.info()
+  if (!is.null(sysinf)){
+    os <- sysinf['sysname']
+    if (os == 'Darwin')
+      os <- "osx"
+  } else { ## mystery machine
+    os <- .Platform$OS.type
+    if (grepl("^darwin", R.version$os))
+      os <- "osx"
+    if (grepl("linux-gnu", R.version$os))
+      os <- "linux"
+  }
+  tolower(os)
+}
 
+# 1. Resumo e visualização
+# read_csv() Lê um arquivo em formato de tabela e cria um data frame a partir dele, 
+# com os casos correspondos às linhas e variáveis às colunas no arquivo
+if (get_os() == "windows") df = read.csv("./data/heart_failure_clinical_records_dataset.csv")
+if (get_os() == "osx") {
+  lugar <- paste0(getwd(),"/Exploratory Data Analysis in R/data/heart_failure_clinical_records_dataset.csv")
+  df = read.csv(file = lugar)
+}
 # colunas no conjunto de dados:
 colnames(df)
 # [1] "age"                      "anaemia"                  "creatinine_phosphokinase"
@@ -20,7 +47,7 @@ if (!"corrplot" %in% installed.packages()) install.packages("corrplot")
 library(corrplot) 
 corrplot(cor(df), type = "upper")
 
-# Utilizando gráficos como guia para decidir os próximos passos
+# Utilizando este gráfico de correlação como base para decidir os próximos passos
 
 # Existem seis variáveis contínuas no dataset: age (idade), creatinine_phosphokinase (Creatina Fosfoquinase)
 # ejection_fraction (fração de ejeção), platelets (plaquetas), serum_creatinine (creatinina sérica) e 
@@ -42,8 +69,8 @@ hist.data.frame(df1, title = "Histogramas das variáveis contínuas")
 #A visualização da distribuição dos dados das seis variáveis nos histogramas 
 # dão uma boa ideia sobre como estão esses dados.
 
-# Para apresentar mais dados a função summary() (resumo) pode fornecer alguns parâmetros estatísticos básicos
- # sobre as seis variáveis contínuas.
+# Para apresentar mais dados, a função summary() (resumo) fornece parâmetros estatísticos básicos
+# sobre as seis variáveis contínuas.
 
 summary(df1)
 
@@ -98,12 +125,13 @@ data1 = paste(names(data1), data1)
 paste(data1, "%", sep = "")
 # [1] "Female 35%" "Male 65%" 
 
+# ggplot2() é um pacote para visualização de dados. 
+# Melhora a qualidade e a estética dos gráficos e torna mais fácil a sua criação.
+# ggplot2() oferece um esquema geral para visualização de dados que divide os gráficos em componentes semânticos, como escalas e camadas, 
+# e serve como um substituto para os gráficos básicos em R e contém uma série de padrões para a web e a exibição impressa de escalas comuns.
+
 # Para aprender mais sobre o conjunto de dados, vamos verificar a distribuição
 # das idades masculina e feminina separadamente na amostra
-
-# ggplot2 é um pacote dedicado à visualização de dados. 
-# Melhora muito a qualidade e a estética dos gráficos e torna mais fácil a sua criação.
-
 ggplot(df, aes(x = age)) + 
   geom_histogram(fill = "white", colour = "black") + 
   facet_grid(sex ~ .)
@@ -140,7 +168,7 @@ ggplot(df_scr) +
 # Além disso, adicionaremos um ponto vermelho que mostrará a média dos dados. 
 
 ggplot(df, aes(y = ejection_fraction, x = death)) + 
-  ggtitle("Fração de Ejeção vs Evento de Morte") +
+  ggtitle("Fração de Ejeção vs Óbitos") +
   geom_jitter()
 
 # A variável tempo apresenta forte correlação com eventos de óbito. 
@@ -148,7 +176,7 @@ ggplot(df, aes(y = ejection_fraction, x = death)) +
 # de morte e nenhum evento de morte: 
 
 ggplot(df, aes(death, time))+geom_point() + 
-  labs(title="Óbitos x tempo separados por gênero ", x = "Death", y = "Time") +
+  labs(title="Óbitos x Período separados por gênero", x = "Death", y = "Time") +
   geom_boxplot(fill='steelblue', col="black", notch=TRUE) + 
   facet_wrap(~ sex)
 
@@ -165,7 +193,7 @@ ggplot(df, aes(x=creatinine_phosphokinase, fill=death)) +
 
 ggplot(df, aes(x=creatinine_phosphokinase, fill=death)) + 
   geom_histogram(bins=20)+facet_wrap(~anaemia) + 
-  labs(title = "Distribuição de Creatina fosfoquinase", 
+  labs(title = "Distribuição de Creatina Fosfoquinase por Anemia", 
        x = "Creatina fosfoquinase", y = "Quantidade")
 
 # A distribuição é bem diferente para a população com anemia e sem anemia!
@@ -174,7 +202,7 @@ ggplot(df, aes(x=creatinine_phosphokinase, fill=death)) +
 # O gráfico de dispersão de idade versus tempo mostra eventos de morte com cores diferentes.  
 
 ggplot(df, aes(x = age, y = time, col = death))+geom_point() + 
-  labs(title = "Age vs Time", x = "Idade", y = "Tempo")
+  labs(title = "Idade vs Período", x = "Idade", y = "Período")
 
 # Gráfico mostrando a distribuição da creatinina sérica separada em cores diferentes
 # para os óbitos:
@@ -193,7 +221,6 @@ ggplot(df_sc, aes(x = serum_creatinine, fill = death))+
   geom_histogram() + 
   labs(title = "Distribuição da creatinina sérica separada em cores diferentes", 
        x = "Creatinina Sérica", y = "Quantidade")
-
 # Sem os outliers, a distribuição no gráfico fica mais clara. 
 
 # A fração de ejeção pode ser diferenteem óbitos. 
@@ -231,15 +258,19 @@ round(data/sum(data), 2)
 # 0.68 0.32 
 
 # Para este modelo preditivo, o conjunto de dados será mais uma vez importado
-# porque foramfritas várias alterações no dataset importado antes.
-d = read.csv("./data/heart_failure_clinical_records_dataset.csv")
+# porque foram realizadas alterações no dataset importado antes.
+if (get_os() == "windows") d = read.csv("./data/heart_failure_clinical_records_dataset.csv")
+if (get_os() == "osx") {
+  lugar <- paste0(getwd(),"/Exploratory Data Analysis in R/data/heart_failure_clinical_records_dataset.csv")
+  d = read.csv(file = lugar)
+}
 
 # Agora, o data frame será dividido em duas partes
 if (!"caTools" %in% installed.packages()) install.packages("caTools")
 
 library(caTools)
 set.seed(1243)
-split = sample.split(df1$DEATH_EVENT, SplitRatio = 0.75)
+split = sample.split(d$DEATH_EVENT, SplitRatio = 0.75)
 
 # A divisão fornece valores booleanos para cada DEATH_EVENT. 
 # 75% deles são verdadeiros e 25% falsos (SplitRatio = 0.75).
@@ -276,7 +307,7 @@ library(caret)
 confusionMatrix(y_pred, as.factor(test_data$DEATH_EVENT))
 
 # Matriz de confusão é uma tabela que permite a visualização do desempenho de um algoritmo de classificação. 
-# Essa tabela de contingência 2x2 especial é também chamada de matriz de erro.  
+# É uma tabela especial de contingência 2x2 e é também chamada de matriz de erro.  
 
 #Confusion Matrix and Statistics
 #

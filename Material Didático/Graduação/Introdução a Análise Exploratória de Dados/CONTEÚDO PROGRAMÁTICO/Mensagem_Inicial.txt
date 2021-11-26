@@ -1,15 +1,15 @@
 Olá!
 
-Você está recebendo esta mensagem porque está matriculado na disciplina optativa 0049210A - Introdução à Análise Exploratória de Dados.
-
 Espero que tudo esteja bem e que você esteja com saúde !
 
-Meu nome é João Pedro Albino e sou o professor atribuído a esta disciplina.
-Esta mensagem contém algumas instruções à respeito do formato que esta disciplina será ministrada.
+ na .
+
+Esta mensagem contém algumas instruções à respeito do formato que a disciplina optativa (0049210A - Introdução à Análise Exploratória de Dados) será ministrada.
 
 1. Outro e-mail com o convite e o endereço para participar das interações via Google Meet (https://meet.google.com/zcj-mfxf-dzj) já foi enviado à todo@s.
 
-2. Como repositório de todo material didático utilizarei a plataforma Moodle. Sendo assim, será necessário que vocês se cadastrem na disciplina nesta plataforma, que está no endereço: https://moodle.unesp.br/course/view.php?id=2298.
+2. Como repositório de todo material didático utilizarei a plataforma Moodle. Sendo assim, será necessário que vocês se cadastrem na disciplina IAED - 49210A na plataforma no endereço: https://moodle.unesp.br/course/view.php?id=2298.
+
 Importante: a chave de acesso para se inscrever na disciplina é: iaed2021.
 
 É isso ! 

@@ -345,7 +345,7 @@ confusionMatrix(y_pred, as.factor(test_data$DEATH_EVENT))
 F1 = round(19/(19 + 0.5*(4 + 5)),2)
 F1
 # [1] 0.81
-
+  
 
 
 

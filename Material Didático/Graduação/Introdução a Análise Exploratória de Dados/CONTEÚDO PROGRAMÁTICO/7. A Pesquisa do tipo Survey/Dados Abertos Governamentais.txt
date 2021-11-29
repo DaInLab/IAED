@@ -1,0 +1,29 @@
+ 
+
+
+
+
+  
+     
+
+A reprodutibilidade de uma experiência científica é uma das condições que permitem incluir no processo de progresso do conhecimento científico as observações realizadas durante a experiência. Essa condição origina-se no princípio de que não se pode tirar conclusões senão de um evento bem descrito, que aconteceu várias vezes, provocado por pessoas distintas. Essa condição permite se livrar de efeitos aleatórios que podem afetar os resultados, de erros de julgamento ou de manipulações por parte dos cientistas.
+
+GitHub Basics: https://www.youtube.com/watch?v=8oRjP8yj2Wo&list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH
+
+
+Capítulo 1 - Análise Exploratória de Dados
+
+
+Os oito princípios
+
+Em 2007, um grupo de trabalho de 30 pessoas reuniu-se na Califórnia, Estados Unidos da América, para definir os princípios dos Dados Abertos Governamentais. Chegaram num consenso sobre os seguintes 8 princípios:
+
+    Completos. Todos os dados públicos são disponibilizados. Dados são informações eletronicamente gravadas, incluindo, mas não se limitando a, documentos, bancos de dados, transcrições e gravações audiovisuais. Dados públicos são dados que não estão sujeitos a limitações válidas de privacidade, segurança ou controle de acesso, reguladas por estatutos.
+    Primários. Os dados são publicados na forma coletada na fonte, com a mais fina granularidade possível, e não de forma agregada ou transformada.
+    Atuais. Os dados são disponibilizados o quão rapidamente seja necessário para preservar o seu valor.
+    Acessíveis. Os dados são disponibilizados para o público mais amplo possível e para os propósitos mais variados possíveis.
+    Processáveis por máquina. Os dados são razoavelmente estruturados para possibilitar o seu processamento automatizado.
+    Acesso não discriminatório. Os dados estão disponíveis a todos, sem que seja necessária identificação ou registro.
+    Formatos não proprietários. Os dados estão disponíveis em um formato sobre o qual nenhum ente tenha controle exclusivo.
+    Livres de licenças. Os dados não estão sujeitos a regulações de direitos autorais, marcas, patentes ou segredo industrial. Restrições razoáveis de privacidade, segurança e controle de acesso podem ser permitidas na forma regulada por estatutos.
+ 

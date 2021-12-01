@@ -3,6 +3,11 @@
 3.2. Big Data
 3.3. Ciência de Dados e Big Data
 
+<<<<<<< HEAD
 …refers to the different types of data we can now use. In the past we only focused on structured data that neatly fitted into tables or relational databases, such as financial data. In fact, 80% of the world’s data is unstructured (text, images, video, voice, etc.) With big data technology we can now analyse and bring together data of different types such as messages, social media conversations, photos, sensor data, video or voice recordings.
 
+=======
+…refers to the different types of data we can now use. In the past we only focused on structured data that neatly fitted into tables or relational databases, such as financial data. In fact, 80% of the world’s data is unstructured (text, images, video, voice, etc.) With big data technology we can now analyse and bring together data of different types such as messages, social media conversations, photos, sensor data, video or voice recordings.
+
+>>>>>>> 6e0354d86d98375bf96e922e7bfb8c1ce1eadeef
 

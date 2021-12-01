@@ -11,7 +11,11 @@ A reprodutibilidade de uma experiência científica é uma das condições que p
 GitHub Basics: https://www.youtube.com/watch?v=8oRjP8yj2Wo&list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH
 
 
+<<<<<<< HEAD
 Capítulo 1 - Análise Exploratória de Dados
+=======
+Capítulo 1 - Análise Exploratória de Dados
+>>>>>>> 6e0354d86d98375bf96e922e7bfb8c1ce1eadeef
 
 
 Os oito princípios

@@ -23,7 +23,7 @@ get_os <- function(){
 # 1. Resumo e visualização
 # read_csv() Lê um arquivo em formato de tabela e cria um data frame a partir dele, 
 # com os casos correspondos às linhas e variáveis às colunas no arquivo
-if (get_os() == "windows") df = read.csv("./data/heart_failure_clinical_records_dataset.csv")
+if (get_os() == "windows") df = read.csv("./Exploratory Data Analysis in R/data/heart_failure_clinical_records_dataset.csv")
 if (get_os() == "osx") {
   lugar <- paste0(getwd(),"/Exploratory Data Analysis in R/data/heart_failure_clinical_records_dataset.csv")
   df = read.csv(file = lugar)
@@ -259,7 +259,7 @@ round(data/sum(data), 2)
 
 # Para este modelo preditivo, o conjunto de dados será mais uma vez importado
 # porque foram realizadas alterações no dataset importado antes.
-if (get_os() == "windows") d = read.csv("./data/heart_failure_clinical_records_dataset.csv")
+if (get_os() == "windows") d = read.csv("./Exploratory Data Analysis in R/data/heart_failure_clinical_records_dataset.csv")
 if (get_os() == "osx") {
   lugar <- paste0(getwd(),"/Exploratory Data Analysis in R/data/heart_failure_clinical_records_dataset.csv")
   d = read.csv(file = lugar)

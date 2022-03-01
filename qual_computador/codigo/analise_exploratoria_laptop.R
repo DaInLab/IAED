@@ -11,7 +11,7 @@ library(readxl)
 #e cada linha contém um conjunto de valores de cada coluna.
 #É uma lista de vetores de igual comprimento
 
-meu.dataframe <-read_excel("./dados/qual_computador_tratado.xlsx")
+meu.dataframe <-read_excel("./qual_computador/dados/qual_computador_tratado.xlsx")
 
 #library(xlsx)
 #meu.dataframe <- read.xlsx("./qual_computador/dados/qual_computador_tratado.xlsx", 

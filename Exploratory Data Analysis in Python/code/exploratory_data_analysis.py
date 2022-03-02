@@ -1,5 +1,4 @@
 # 
-
 # Let’s import the necessary packages 
 import pandas as pd
 import numpy as np
@@ -7,8 +6,12 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #Let’s import the dataset
-arquivo = "/Users/jpalbino/Library/Mobile Documents/com~apple~CloudDocs/GitHub/IAED/Exploratory Data Analysis in Python/data/heart_failure_clinical_records_dataset.csv"
-df = pd.read_csv(arquivo)
+arquivo_mac = "/Users/jpalbino/Library/Mobile Documents/com~apple~CloudDocs/GitHub/IAED/Exploratory Data Analysis in Python/data/heart_failure_clinical_records_dataset.csv"
+df = pd.read_csv(arquivo_mac)
+
+arquivo_win = "D:/GitHub/IAED/Exploratory Data Analysis in Python/data/heart_failure_clinical_records_dataset.csv"
+df = pd.read_csv(arquivo_win)
+
 
 # Dataset is a bit bigger for showing a screenshot. It has 299 rows of data.
 # Here are the columns of the dataset:

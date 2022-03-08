@@ -13,10 +13,10 @@ library(readxl)
 
 meu.dataframe <-read_excel("./qual_computador/dados/qual_computador_tratado.xlsx")
 
-#library(xlsx)
-#meu.dataframe <- read.xlsx("./qual_computador/dados/qual_computador_tratado.xlsx", 
-#                           sheetName = "computador",
-#                           stringsAsFactors = FALSE)
+library(xlsx)
+meu.dataframe <- read.xlsx("./qual_computador/dados/qual_computador_tratado.xlsx", 
+                           sheetName = "computador",
+                           stringsAsFactors = FALSE)
 head(meu.dataframe, 2)
 
 # Alguns gráficos básicos
@@ -119,3 +119,4 @@ pie(table(meu.dataframe$curso), labels = lbls, edges = 200, radius = 0.8,
     col = c("red", "yellow",  "purple","green3","cyan"),
     border = NULL,
     lty = NULL, main = "Cursos dos Alunos")
+

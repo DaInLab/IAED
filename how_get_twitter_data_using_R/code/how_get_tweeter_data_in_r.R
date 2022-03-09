@@ -11,9 +11,10 @@
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
-
+if (!requireNamespace("remotes", quietly = TRUE)) {
 ## install dev version of rtweet from github
 remotes::install_github("ropensci/rtweet")
+}
 
 #Install and Load R packages
 if (!requireNamespace("twitteR", quietly = TRUE)) {
